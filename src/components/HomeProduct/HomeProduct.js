@@ -5,12 +5,6 @@ const HomeProduct = ({realQuiz}) => {
     const {id, name, logo} = realQuiz;
     return (
         <div className='mt-8 w-full'>
-            {/* <img src={logo} alt=""/>
-            <div className='flex gap-8 mt-4 items-center justify-between'>
-                <h1 className='float-left text-green-600'>{name}</h1>
-                <button className='bg-blue-400 w-100 py-4 px-2 rounded ml-52 text-white'>Start Quiz</button>
-            </div> */}
-            
             <div className ="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                 <Link href="#">
                     <img className ="p-8 rounded-t-lg" src={logo}/>
