@@ -4,22 +4,6 @@ import { Link } from 'react-router-dom';
 const Header = () => {
     return (
         <div className=''>
-            {/* <nav className='mt-4'>
-                <ul className='flex gap-8'>
-                    <li>
-                        <Link to='/'>Home</Link>
-                    </li>
-                    <li>
-                        <Link to='/quiz'>Quiz</Link>
-                    </li>
-                    <li>
-                        <Link to='/tutorials'>Tutorials</Link>
-                    </li>
-                    <li>
-                        <Link to='/answer'>Answer</Link>
-                    </li>
-                </ul>
-            </nav> */}
             <header class="bg-green-400 bg-opacity-75 text-white shadow-lg hidden md:block">
                 <div class="container mx-auto flex items-center h-24">
                     <Link to="" class="flex items-center justify-center">

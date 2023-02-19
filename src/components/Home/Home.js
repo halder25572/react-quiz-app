@@ -8,7 +8,11 @@ const Home = () => {
     console.log(coolQuiz.data[0]);
     return (
         <div className='w-100 ml-8'>
-            <h1>This is home</h1>
+            <div className="my-4">
+                <h1 className='text-5xl font-bold'>Programming Online Quiz</h1>
+                <p className='mt-4 text-1xl'>Computer programming is the process of writing code to facilitate specific actions in a computer, application or software program, and instructs them on how to perform.
+                </p>
+            </div>
             <div className='flex'>
                 {
                     coolQuiz.data.map(realQuiz => <HomeProduct realQuiz={realQuiz} key={realQuiz.id}></HomeProduct>)
