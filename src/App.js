@@ -7,6 +7,7 @@ import Quiz from './components/Quiz/Quiz';
 import Tutorials from './components/Tutorials/Tutorials';
 import Answer from './components/Answer/Answer';
 import Projects from './components/Projects/Projects';
+import QuizDetails from './components/QuizDetails/QuizDetails';
 
 function App() {
   const router = createBrowserRouter([
@@ -18,6 +19,13 @@ function App() {
             loader: () => fetch('https://openapi.programming-hero.com/api/quiz'),
           element: <Home></Home>
         },
+        // Start Quiz Button Work Here
+        {
+          path: '/realQuiz/:realQuiz',
+            loader: ({params}) => fetch(`https://openapi.programming-hero.com/api/quiz/${params.realQuiz}`),
+          element : <QuizDetails></QuizDetails>
+        },
+        // End Quiz Button Work Here
         {
           path: '/quiz',
           element: <Quiz></Quiz>
@@ -34,11 +42,11 @@ function App() {
           path: '/projects',
           element: <Projects></Projects>
         },
-        {
-          path: '*',
-          element: <div className='text-5xl text-red-500'>Page Not Found</div>
-        }
       ]
+    },
+    {
+      path: '*',
+      element: <div className='text-5xl text-red-500'>Page Not Found</div>
     }
   ])
   return (
