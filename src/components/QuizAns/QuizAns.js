@@ -1,12 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {faEye} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const QuizAns = ({quizAns}) => {
     const {id, correctAnswer, question, options} = quizAns;
+
+    // const [correct, setCorrect] = useState('');
+    // console.log(correct.length);
+
+    // eye icon click work
     const correctAns = () => {
         alert(correctAnswer);
     }
+
+    // const quizCorrect = () => {
+    //     alert(correctAnswer);
+    // }
+
     return (
         <div className='mt-4 py-4'>
             <div className="customWidth container mx-auto p-4 text-center bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
@@ -15,10 +25,9 @@ const QuizAns = ({quizAns}) => {
             </div>
                 <h5 className="mb-2 text-3xl font-bold dark:text-white text-blue-600">{question}</h5>
                     <div className="text-blue-600 mb-5 text-base sm:text-lg dark:text-gray-400 grid grid-rows-2 grid-flow-col gap-2">
-                        <p className='border py-8 m-4 p-8 rounded'><input className='mr-8' type="radio" name='radio'/>{options[0]}</p>
-                        <p className='border py-8 m-4 rounded'><input className='mr-8' type="radio" name='radio' />{options[1]}</p>
-                        <p className='border py-8 m-4 rounded'><input className='mr-8' type="radio" name='radio' />{options[2]}</p>
-                        <p className='border py-8 m-4 rounded'><input className='mr-8' type="radio" name='radio' />{options[3]}</p>
+                        {
+                            options.map(list => <li className='list-none border py-8 m-4 rounded pl-8'><input className ='mr-8' type="radio" name='radio'/>{list}</li>)
+                        }
                     </div>
             </div>
         </div>
