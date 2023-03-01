@@ -8,6 +8,7 @@ import Tutorials from './components/Tutorials/Tutorials';
 import Answer from './components/Answer/Answer';
 import Projects from './components/Projects/Projects';
 import QuizDetails from './components/QuizDetails/QuizDetails';
+import CorrectAns from './components/CorrectAns/CorrectAns';
 
 function App() {
   const router = createBrowserRouter([
@@ -26,6 +27,11 @@ function App() {
           element : <QuizDetails></QuizDetails>
         },
         // End Quiz Button Work Here
+        // {
+        //   path: '/correctAns/:correctAns',
+        //     loader : () => fetch()
+        //   element : <CorrectAns></CorrectAns>
+        // },
         {
           path: '/quiz',
           element: <Quiz></Quiz>

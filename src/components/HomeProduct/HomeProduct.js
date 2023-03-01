@@ -7,6 +7,7 @@ const HomeProduct = ({realQuiz}) => {
 
     // Start Quiz button click work
     const navigate = useNavigate();
+    
     const handlerNAvigate = () => {
         navigate(`/realQuiz/${id}`);
     }
