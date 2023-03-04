@@ -13,9 +13,15 @@ const QuizAns = ({quizAns}) => {
         alert(correctAnswer);
     }
 
-    // const quizCorrect = () => {
-    //     alert(correctAnswer);
-    // }
+    const quizCorrect = () => {
+         const exist = options === 1;
+         if(exist){
+             alert('True');
+         }
+        // else if(options.find !== correctAnswer){
+        //     alert('False');
+        // }
+    }
 
     return (
         <div className='mt-4 py-4'>
@@ -26,7 +32,8 @@ const QuizAns = ({quizAns}) => {
                 <h5 className="mb-2 text-3xl font-bold dark:text-white text-blue-600">{question}</h5>
                     <div className="text-blue-600 mb-5 text-base sm:text-lg dark:text-gray-400 grid grid-rows-2 grid-flow-col gap-2">
                         {
-                            options.map(list => <li className='list-none border py-8 m-4 rounded pl-8'><input className ='mr-8' type="radio" name='radio'/>{list}</li>)
+                            // 'mr-8 cursor-pointer' class for input
+                            options.map(list => <li className='list-none border py-8 m-4 rounded pl-8'><input onClick={quizCorrect} className ="mr-8 cursor-pointer" type="radio" name='radio'/>{list}</li>)
                         }
                     </div>
             </div>
