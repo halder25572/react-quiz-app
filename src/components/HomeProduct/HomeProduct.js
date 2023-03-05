@@ -12,10 +12,10 @@ const HomeProduct = ({realQuiz}) => {
         navigate(`/realQuiz/${id}`);
     }
     return (
-        <div className='mt-8 lg:container mx-auto'>
+        <div className='mt-8 lg:container md:mx-auto'>
             <div className ="w-80 max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                 <Link>
-                    <img className ="p-8 rounded w-60 h-60 mx-auto bg-gray-400 mt-2" src={logo}/>
+                    <img className ="p-8 rounded w-60 h-60 mx-auto bg-gray-400 mt-2" src={logo} alt="This is logo"/>
                 </Link>
                 <div class="px-5 pb-5">
                     <div className ="flex items-center mt-2.5 mb-5">
