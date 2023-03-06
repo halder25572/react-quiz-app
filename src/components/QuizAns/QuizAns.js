@@ -15,8 +15,7 @@ const QuizAns = ({quizAns}) => {
 
     // click radio button for correct answer
     const quizCorrect = () => {
-        const exists = options.find(ts => ts.id === correctAnswer.id)
-         if(exists){
+         if(correctAnswer){
              alert('True');
          }
          else{
@@ -34,7 +33,8 @@ const QuizAns = ({quizAns}) => {
                     <div className="text-blue-600 mb-5 text-base sm:text-lg dark:text-gray-400 md:grid md:grid-rows-2 md:grid-flow-col md:gap-2">
                         {
                             // 'mr-8 cursor-pointer' class for input
-                            options.map(list => <li className='list-none border py-8 m-4 rounded pl-8'><input onClick={quizCorrect} className = "mr-8 cursor-pointer" type="radio" name='radio'/>{list}</li>)
+                            // list-none border py-8 m-4 rounded pl-8 for li
+                            options.map(list => <li list={list} className={`list-none border py-8 m-4 rounded pl-8 ${list === correctAnswer ? 'text-green-600' : 'text-red-600'}`}><input onClick={quizCorrect} className = "mr-8 cursor-pointer" type="radio" name='radio'/>{list}</li>)
                         }
                     </div>
             </div>
