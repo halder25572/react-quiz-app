@@ -15,7 +15,7 @@ const correctAns = () => {
 // click radio button for correct answer
 const quizCorrect = () => {
 
-    const exists = options.find(options => options === correctAnswer);
+    const exists = options.find(option => option === correctAnswer);
     if(exists){
         alert(`True`);
     }
