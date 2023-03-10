@@ -4,8 +4,6 @@ import HomeProduct from '../HomeProduct/HomeProduct';
 
 const Home = () => {
     const coolQuiz = useLoaderData();
-    // console.log(coolQuiz);
-    console.log(coolQuiz.data[0]);
     return (
         <div className='w-100 container mx-auto gap-4'>
             <div className="my-4">

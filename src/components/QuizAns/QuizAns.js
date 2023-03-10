@@ -1,13 +1,11 @@
 // import React, { useState } from 'react';
 import {faEye} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { useNavigate } from 'react-router-dom';
 
 
 const QuizAns = ({quizAns}) => {
 const {id, correctAnswer, question, options} = quizAns;
-
-// const [correct, setCorrect] = useState('');
-// console.log(correct.length);
 
 // eye icon click work
 const correctAns = () => {
@@ -16,13 +14,13 @@ const correctAns = () => {
 
 // click radio button for correct answer
 const quizCorrect = () => {
-    // const myCondition = (options !== correctAnswer ? 'True' : 'False');
-    // alert(myCondition);
-    if(options === correctAnswer){
-        alert('True')
+
+    const exists = options.find(options => options === correctAnswer);
+    if(exists){
+        alert(`True`);
     }
     else{
-        alert('False')
+        alert(`False`);
     }
 }
 
@@ -38,7 +36,7 @@ return (
                     {
                         // 'mr-8 cursor-pointer' class for input
                         // list-none border py-8 m-4 rounded pl-8 for li
-                        options.map(list => <li list={list} className='list-none border py-8 m-4 rounded' ><input onClick={quizCorrect} className = "mr-8 cursor-pointer" type="radio" name='radio'/>{list}</li>)
+                        options.map(list => <li list={list} key={list.id} className='list-none border py-8 m-4 rounded' ><input onClick={quizCorrect} className = "mr-8 cursor-pointer" type="radio" name='radio'/>{list}</li>)
                     }
                 </div>
         </div>
